@@ -1,0 +1,37 @@
+version: '3'
+services:
+  db:
+    image: postgres
+
+  server:
+    image: 'node:8'
+    user: 'node'
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./server:/home/node/app
+    ports:
+      - '9000:9000'
+    command: 'node index.js'
+    links:
+      - db
+    depends_on:
+      - db
+
+  client:
+    build: ./client
+    environment:
+      - REACT_APP_CLIENT_URL
+      - REACT_APP_API_URL
+    volumes:
+      - ./client/src:/usr/src/app/src
+      - ./client/public:/usr/src/app/public
+      - ./client:/usr/src/app
+    ports:
+      - '3000:3000'
+    links:
+      - server
+    depends_on:
+      - db
+      - server
