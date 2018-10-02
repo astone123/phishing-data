@@ -9,14 +9,14 @@ const Phish = {
     field: 'phish_detail_url'
   },
   submissionTime: {
-    type: Sequelize.TIME,
+    type: Sequelize.DATE,
     field: 'submission_time'
   },
   verified: {
     type: Sequelize.BOOLEAN
   },
   verificationTime: {
-    type: Sequelize.TIME,
+    type: Sequelize.DATE,
     field: 'verification_time'
   },
   online: {

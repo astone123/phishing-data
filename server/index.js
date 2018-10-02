@@ -1,30 +1,27 @@
 const express = require('express');
-const express_graphql = require('express-graphql');
-const { buildSchema } = require('graphql');
-const db = require('./database');
+var schedule = require('node-schedule');
+const fetchData = require('./fetch-data');
+const { db, writeData } = require('./database');
 
 const app = express();
 const port = process.env.PORT || 9000;
 
-// GraphQL schema
-const schema = buildSchema(`
-    type Query {
-        message: String
-    }
-`);
-
-// Root resolver
-const root = {
-  message: () => 'Hello World!'
-};
-
-app.use(
-  '/graphql',
-  express_graphql({
-    schema: schema,
-    rootValue: root,
-    graphiql: true
+app.get('/phish', (req, res) =>
+  db.Phish.findAll().then(data => {
+    res.send(data);
   })
 );
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
+
+/* Update records every day */
+schedule.scheduleJob('1 * * *', async () => {
+  /* Clear all of the records so that we can update them */
+  db.Phish.destroy({
+    where: {},
+    truncate: true
+  });
+
+  const records = await fetchData();
+  writeData(JSON.parse(records));
+});

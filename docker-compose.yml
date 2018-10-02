@@ -2,6 +2,8 @@ version: '3'
 services:
   db:
     image: postgres
+    volumes:
+      - ./data:/var/lib/postgresql/data
 
   server:
     image: 'node:8'
