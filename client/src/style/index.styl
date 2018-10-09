@@ -1,0 +1,58 @@
+@import 'lib/colors.styl'
+
+.App
+    text-align center
+
+.App-header
+    background-color #222
+    height 65px
+    padding 20px
+    color white
+
+.App-title
+    font-size 1.5em
+
+.App-intro
+    font-size large
+
+.rt-tr
+    &:hover
+        cursor pointer
+
+
+.rt-th
+    padding 1em 0 1em 0 !important
+
+svg
+    cursor grab
+    &:active
+        cursor grabbing
+
+circle
+    fill $BubbleFill
+    &:hover
+        cursor pointer
+        fill alpha($BubbleFill, 0.6)
+
+input
+    width 75%
+    margin 0 auto
+    height 4em
+    border-radius 5px
+    padding 0 .5em
+    font-size 130%
+    border 2px solid $gray
+    margin-top .5em
+
+.button-reset
+    width 7em
+    height 3em
+    border-radius 5px
+    background-color $gray
+    color white
+    font-size 100%
+    cursor pointer
+    margin .5em 0 1.5em 0
+
+    &:hover
+        background-color alpha($gray, .8)
