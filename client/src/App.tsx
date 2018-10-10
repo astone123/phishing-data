@@ -51,7 +51,7 @@ class App extends React.Component<{}, IAppState> {
           <h1 className="App-title">Phishing Sites Currently Online</h1>
         </header>
         <Search notify={this.notify} {...this.state} />
-        <BubbleMap {...this.state} />
+        <BubbleMap countries={this.state.countries} />
         <DataTable {...this.state} />
       </div>
     );

@@ -32,6 +32,10 @@ interface IWithData {
   data: Array<IPhish> | null;
 }
 
+interface IBubbleMapProps {
+  countries: Array<ICountry> | null;
+}
+
 interface IWithQuery {
   query: string;
 }

@@ -28,10 +28,10 @@ const SCALE_MINIMUM = 8;
 const SCALE_MULTIPLIER = 0.35;
 
 class BubbleMap extends React.Component<
-  IAppState,
+  IBubbleMapProps,
   { center: Array<number>; zoom: number }
 > {
-  constructor(props: IAppState) {
+  constructor(props: IBubbleMapProps) {
     super(props);
     this.state = {
       center: DEFAULT_CENTER,
