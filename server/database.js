@@ -12,7 +12,14 @@ const sequelize = new Sequelize(
   config.database,
   config.username,
   config.password,
-  config
+  Object.assign(config, {
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 20000,
+      acquire: 20000
+    }
+  })
 );
 
 /* Define Phish model. */

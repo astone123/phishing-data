@@ -1,0 +1,29 @@
+sudo: required
+language: node_js
+node_js:
+  - '7'
+env:
+  DOCKER_COMPOSE_VERSION: 3
+services:
+  - docker
+jobs:
+  include:
+    - stage: test
+      before_script:
+        - './start.sh'
+        - sleep 15
+      script:
+        - ci/run-client-tests.sh
+        - ci/run-server-tests.sh
+
+deploy:
+  provider: cloudfoundry
+  api: https://api.run.pivotal.io
+  username: a.stone2695@gmail.com
+  password:
+    secure: kMq8sm3FCQRcTk/CVT6r+QvGT9/onCzQ6ERs55qpojhXPczDCXcnuc70tQPNcJhJ25qaupmzN/nzNU9Oa6oZ3GNmy9yJ/5fNC0T/SpRTETFGHKBI1H2HRpvzi96EKm6GwfxDtT+GEVbzWETrTUdcnaur18hZX61HE0MNIusZKNYm50jce0QPlXfRFxAn9tZA9DMEwX8+GyzBMUO1k3KhHwXPuRl2LXz8bZhsVQ+HlPPSVYkfIGXow62dpthbyCao93JV2CGnkmMTABaBrDvqq72S/UPuYcgkt7cXY1T+dwCNot/AgNR7oylyQHgvxSZMNTyR6afdLPW+JCq++LGOlDmuEGhZhct8i7fG1qAyzMsDs8MSfhRlhFyF9p/srRMRUd2fXGQFpk6H2O2ACM53B2DE3fr8WTO1rr2J2WGA//4/kFUrfmuJqtwBiRV1fePmXGfIpnXvfiezmKUBKjYtpq5zF3vMEgn0nIlxpIUPloUPJfXjf4MmgdQBFPPS4G0m3AM6ih3lahFt1We2+0mgTeM6RyYC6c+Mi56zH4EyeRBUrEcRxMcQKigfxwjGwRp02iExYXpF7X37WkwKXfFvYvC42XoQWulyTGZHVZT46Tp3mTYw1UDfmq1wU8OPRwNBbUEw24VRmG0ZXME2fuT3dcXlQdaA0U5hw4b6lssPsqQ=
+  organization: phishing
+  space: development
+  on:
+    repo: astone123/phishing-data
+    branch: ci

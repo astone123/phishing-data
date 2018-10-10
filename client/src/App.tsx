@@ -6,7 +6,7 @@ import BubbleMap from './components/BubbleMap';
 import DataTable from './components/DataTable';
 import Search from './components/Search';
 
-const { SERVER_URL = 'http://localhost:9000' } = process.env;
+const { REACT_APP_SERVER_URL = 'http://localhost:9000' } = process.env;
 
 class App extends React.Component<{}, IAppState> {
   constructor(props: {}) {
@@ -24,7 +24,7 @@ class App extends React.Component<{}, IAppState> {
 
   public fetchPhishData(query = '') {
     axios
-      .get(`${SERVER_URL}/phish?q=${query}`)
+      .get(`${REACT_APP_SERVER_URL}/phish?q=${query}`)
       .then((response: AxiosResponse) =>
         this.setState({
           data: response.data.phishData as Array<IPhish>,
