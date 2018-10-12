@@ -1,0 +1,17 @@
+applications:
+  - name: phishing-server
+    memory: 1G
+    instances: 1
+    random_route: true
+    path: ./server/
+    command: npm start
+    buildpacks:
+      - https://github.com/cloudfoundry/nodejs-buildpack
+  - name: phishing-client
+    memory: 1G
+    instances: 1
+    random_route: true
+    path: ./client/
+    command: npm start
+    buildpacks:
+      - https://github.com/cloudfoundry/nodejs-buildpack
