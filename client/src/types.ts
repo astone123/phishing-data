@@ -36,6 +36,10 @@ interface IBubbleMapProps {
   countries: Array<ICountry> | null;
 }
 
+interface IBarChartProps {
+  targetCounts: Array<ITargetCount> | null;
+}
+
 interface IWithQuery {
   query: string;
 }
@@ -54,3 +58,4 @@ interface Notify {
 declare module 'react-simple-maps';
 declare module 'd3-scale';
 declare module 'react-tooltip';
+declare module 'react-vis';

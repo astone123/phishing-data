@@ -1,9 +1,7 @@
 const express = require('express');
-const schedule = require('node-schedule');
-const fetchData = require('./fetch-data');
 const getTargetCounts = require('./target-helpers');
 const getCountryArray = require('./country-helpers');
-const { db, writePhishData } = require('./database');
+const { db } = require('./database');
 
 const app = express();
 const port = process.env.PORT || 9000;
@@ -50,15 +48,3 @@ app.get('/phish', async (req, res) => {
 });
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
-
-/* Update records every day */
-// schedule.scheduleJob('1 * * *', async () => {
-//   /* Clear all of the records so that we can update them */
-//   db.Phish.destroy({
-//     where: {},
-//     truncate: true
-//   });
-
-//   const records = await fetchData();
-//   await writePhishData(JSON.parse(records));
-// });

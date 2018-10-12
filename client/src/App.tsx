@@ -5,6 +5,7 @@ import './App.css';
 import BubbleMap from './components/BubbleMap';
 import DataTable from './components/DataTable';
 import Search from './components/Search';
+import BarChart from './components/BarChart';
 
 const { REACT_APP_SERVER_URL = 'http://localhost:9000' } = process.env;
 
@@ -53,6 +54,7 @@ class App extends React.Component<{}, IAppState> {
         <Search notify={this.notify} {...this.state} />
         <BubbleMap countries={this.state.countries} />
         <DataTable {...this.state} />
+        <BarChart targetCounts={this.state.targetCounts} />
       </div>
     );
   }

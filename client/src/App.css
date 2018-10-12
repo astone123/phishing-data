@@ -1,3 +1,4 @@
+@import '../../node_modules/react-vis/dist/style.css';
 .App {
   text-align: center;
 }
@@ -54,4 +55,17 @@ input {
 }
 .button-reset:hover {
   background-color: rgba(96,125,139,0.8);
+}
+.rv-xy-plot {
+  margin: 0 auto;
+  margin-bottom: 7em;
+}
+.rv-xy-plot__inner {
+  padding-bottom: 7em;
+}
+.rv-xy-plot__axis__tick__text {
+  font-size: 100%;
+}
+.rv-xy-plot__series--bar rect {
+  fill: #1e88e5 !important;
 }
