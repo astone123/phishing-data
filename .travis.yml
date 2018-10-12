@@ -26,4 +26,4 @@ deploy:
   space: development
   on:
     repo: astone123/phishing-data
-    branch: ci
+    branch: master
