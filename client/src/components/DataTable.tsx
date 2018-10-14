@@ -3,7 +3,8 @@ import ReactTable, { RowInfo } from 'react-table';
 import * as moment from 'moment';
 import 'react-table/react-table.css';
 
-const formatTimestamp = (timestamp: Date) => moment(timestamp).format('LLLL');
+const formatTimestamp = (timestamp: Date) =>
+  moment.utc(timestamp).format('LLLL');
 
 const DataTable: React.SFC<IWithData> = ({ data }) =>
   data ? (
