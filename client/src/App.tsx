@@ -6,6 +6,7 @@ import BubbleMap from './components/BubbleMap';
 import DataTable from './components/DataTable';
 import Search from './components/Search';
 import BarChart from './components/BarChart';
+import Loading from './components/Loading';
 
 const { REACT_APP_SERVER_URL = 'http://localhost:9000' } = process.env;
 
@@ -51,10 +52,21 @@ class App extends React.Component<{}, IAppState> {
         <header className="App-header">
           <h1 className="App-title">Phishing Sites Currently Online</h1>
         </header>
-        <Search notify={this.notify} {...this.state} />
-        <BubbleMap countries={this.state.countries} />
-        <DataTable {...this.state} />
-        <BarChart targetCounts={this.state.targetCounts} />
+        {/* If the endpoint returns an empty array, this means that it is still fetching
+        data. Render a loading indicator. */}
+        {this.state.data && this.state.data.length == 0 ? (
+          <>
+            <h3>Server is still fetching data. Please refresh the page...</h3>
+            <Loading />
+          </>
+        ) : (
+          <>
+            <Search notify={this.notify} {...this.state} />
+            <BubbleMap countries={this.state.countries} />
+            <DataTable {...this.state} />
+            <BarChart targetCounts={this.state.targetCounts} />
+          </>
+        )}
       </div>
     );
   }

@@ -8,8 +8,15 @@ import {
   VerticalBarSeries
 } from 'react-vis';
 
+const MAXIMUM_CHARACTERS = 10;
+
 const sortByCountAscending = (a: ITargetCount, b: ITargetCount) =>
   a.count < b.count ? 1 : 0;
+
+const maybeTruncate = (name: string) =>
+  name.length > MAXIMUM_CHARACTERS
+    ? name.substring(0, MAXIMUM_CHARACTERS) + '...'
+    : name;
 
 const BarChart: React.SFC<IBarChartProps> = ({ targetCounts }) => {
   const targetCountsSorted =
@@ -27,7 +34,7 @@ const BarChart: React.SFC<IBarChartProps> = ({ targetCounts }) => {
             targetCountsSorted &&
             targetCountsSorted
               .map((count: ITargetCount) => ({
-                x: count.target,
+                x: maybeTruncate(count.target),
                 y: count.count
               }))
               .filter(item => item.x !== 'Other')

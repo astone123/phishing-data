@@ -40,6 +40,11 @@ interface IBarChartProps {
   targetCounts: Array<ITargetCount> | null;
 }
 
+interface ISearchProps {
+  query: string | null;
+  notify?: notify;
+}
+
 interface IWithQuery {
   query: string;
 }

@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-class Search extends React.Component<IAppState & Notify, { query: string }> {
-  constructor(props: IAppState & Notify) {
+class Search extends React.Component<ISearchProps, { query: string }> {
+  constructor(props: ISearchProps) {
     super(props);
     this.state = { query: props.query || '' };
 
@@ -12,7 +12,9 @@ class Search extends React.Component<IAppState & Notify, { query: string }> {
   handleQueryChange(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    this.props.notify({ query: this.state.query });
+    if (this.props.notify) {
+      this.props.notify({ query: this.state.query });
+    }
   }
 
   onChange(e: React.ChangeEvent<HTMLInputElement>) {

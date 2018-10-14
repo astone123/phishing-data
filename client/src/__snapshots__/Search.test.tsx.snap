@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Bar Chart Component 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <input
+    autoFocus={true}
+    onChange={[Function]}
+    placeholder="Filter by IP, Target, or URL"
+    type="search"
+    value=""
+  />
+</form>
+`;

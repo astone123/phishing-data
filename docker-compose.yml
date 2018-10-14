@@ -19,6 +19,7 @@ services:
     environment:
       - NODE_ENV=development
       - PHISHTANK_API_KEY
+      - SERVER_URL
     ports:
       - '9000:9000'
     links:

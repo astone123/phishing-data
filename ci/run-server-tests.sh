@@ -1,6 +1,5 @@
-docker ps
-docker logs phishingdata_server_1
-docker logs phishingdata_client_1
+# This test assumes that it is run from the project root.
+
 cd server
 npm i
 npm test
