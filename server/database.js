@@ -32,7 +32,7 @@ let db;
   /* Connect to Postgres database. When it starts up for the first time it creates volumes which
   takes a while. Hence the sleep timer. */
   console.log('Waiting for database...');
-  await sleep(12000);
+  await sleep(14000);
   await sequelize
     .authenticate()
     .then(() => {

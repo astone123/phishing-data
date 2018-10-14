@@ -39,16 +39,8 @@ exports[`Test Bar Chart Component 1`] = `
         <line
           className="rv-xy-plot__grid-lines__line"
           style={undefined}
-          x1={212.5}
-          x2={212.5}
-          y1={0}
-          y2={450}
-        />
-        <line
-          className="rv-xy-plot__grid-lines__line"
-          style={undefined}
-          x1={637.5}
-          x2={637.5}
+          x1={425}
+          x2={425}
           y1={0}
           y2={450}
         />
@@ -206,7 +198,7 @@ exports[`Test Bar Chart Component 1`] = `
           <g
             className="rv-xy-plot__axis__tick"
             style={Object {}}
-            transform="translate(212.5, 0)"
+            transform="translate(425, 0)"
           >
             <line
               className="rv-xy-plot__axis__tick__line"
@@ -223,30 +215,7 @@ exports[`Test Bar Chart Component 1`] = `
               textAnchor="end"
               transform="translate(0, 14) rotate(-45)"
             >
-              Test Company...
-            </text>
-          </g>
-          <g
-            className="rv-xy-plot__axis__tick"
-            style={Object {}}
-            transform="translate(637.5, 0)"
-          >
-            <line
-              className="rv-xy-plot__axis__tick__line"
-              style={Object {}}
-              x1={0}
-              x2={0}
-              y1={-6}
-              y2={6}
-            />
-            <text
-              className="rv-xy-plot__axis__tick__text"
-              dy="0"
-              style={Object {}}
-              textAnchor="end"
-              transform="translate(0, 14) rotate(-45)"
-            >
-              Test Company
+              Test Compa...
             </text>
           </g>
         </g>
@@ -655,8 +624,8 @@ exports[`Test Bar Chart Component 1`] = `
               "stroke": "#12939A",
             }
           }
-          width={361.25}
-          x={31.875}
+          width={722.5}
+          x={63.75}
           y={0}
         />
         <rect
@@ -672,8 +641,8 @@ exports[`Test Bar Chart Component 1`] = `
               "stroke": "#12939A",
             }
           }
-          width={361.25}
-          x={456.875}
+          width={722.5}
+          x={63.75}
           y={150}
         />
         <rect
@@ -689,8 +658,8 @@ exports[`Test Bar Chart Component 1`] = `
               "stroke": "#12939A",
             }
           }
-          width={361.25}
-          x={31.875}
+          width={722.5}
+          x={63.75}
           y={375}
         />
         <rect
@@ -706,8 +675,8 @@ exports[`Test Bar Chart Component 1`] = `
               "stroke": "#12939A",
             }
           }
-          width={361.25}
-          x={31.875}
+          width={722.5}
+          x={63.75}
           y={405}
         />
       </g>
