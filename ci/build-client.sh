@@ -2,3 +2,4 @@
 
 cd client
 npm run build
+touch build/Staticfile

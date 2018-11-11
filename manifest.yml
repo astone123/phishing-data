@@ -1,4 +1,8 @@
 applications:
+  - name: phishing-client
+    memory: 1G
+    instances: 1
+    path: ./client/build
   - name: phishing-server
     memory: 1G
     instances: 1
@@ -7,8 +11,3 @@ applications:
     command: npm start
     buildpacks:
       - https://github.com/cloudfoundry/nodejs-buildpack
-  - name: phishing-client
-    memory: 1G
-    instances: 1
-    random_route: true
-    path: ./client/build
