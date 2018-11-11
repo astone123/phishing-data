@@ -15,6 +15,7 @@ jobs:
       script:
         - ci/run-client-tests.sh
         - ci/run-server-tests.sh
+        - ci/build-client.sh
 
 deploy:
   provider: cloudfoundry
